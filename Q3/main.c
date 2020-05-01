@@ -36,7 +36,7 @@ void fileProcessing(char *word1, char *word2, FILE *fPointer, FILE *tempFile){
 	}
 }
 
-int main(int argc, char *argv[]){
+void change(int argc, char *argv[]){
 	//Checks that the number of arguments given to the command line is correct. Else it prints the error message
 	//below, along with an exit code of 1
 	if (argc!=4){
