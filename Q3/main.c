@@ -43,6 +43,7 @@ int main(int argc, char *argv[]){
 	//function and write that in the new file. 
 	char word[1000]="";
 	char c;
+	int cond=0;
 	while ((c=fgetc(fPointer)) !=EOF ) {
 		//If the character is an alphabet (capital or lower case) (I check it using the ASCII value)
 		if ((c>=65 && c<=90) || (c>=97 && c<=122)){	
@@ -50,15 +51,15 @@ int main(int argc, char *argv[]){
 			strncat(word,&c,1);
 		//If it is not an alphabet (a space, a tab, an enter, or any other symbols).
 		} else {
+			
+			
 			//Take care of the condition if the beginning of the file just starts with 
 			//a weird character or the fact that there could be multiple spaces 
-			if (strlen(word) >= 1){
+			if (strlen(word) >= 1 ){
 				//Uses the replace function in replace.c
 				result = replace(word,word1,word2);
+				fputs(result,tempFile);
 			}
-
-			//Puts the result in the file
-			fputs(result,tempFile);
 
 			//Reset the word in order to start filling up the next one in the array
 			word[0] = '\0';
