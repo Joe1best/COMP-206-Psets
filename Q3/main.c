@@ -15,7 +15,7 @@ void fileProcessing(char *word1, char *word2, FILE *fPointer, FILE *tempFile){
 		if ((c>=65 && c<=90) || (c>=97 && c<=122)){	
 			//Concatenate the character to the string word 
 			strncat(word,&c,1);
-		//If it is not an alphabet (a space, a tab, an enter, or any other symbols).
+		//If it is not an alphabet (a space, a tab, an enter, or any other symbol).
 		} else {
 			
 			
@@ -43,6 +43,7 @@ int main(int argc, char *argv[]){
 		printf("You need to give this function arguments of type [FILENAME/PATH TO FILENAME] [WORD1] [WORD2]\n");
 		exit(1);
 	}	
+
 	//File pointer
 	char *filename = argv[1];
 	
@@ -62,14 +63,12 @@ int main(int argc, char *argv[]){
 	//Opens the input file
 	fPointer = fopen(filename,"r");
 
-
 	//Defining the three word variables
 	char *word1 = argv[2];
 	char *word2 = argv[3];
-
 	
-	//To read each word in the file, I read every character in the file using fgetc(). Until I detect that the 
-	//character is not an alphabet, I concatenate this character to the variable "word" forming a word in the
+	//To read each word in the file, I read every character in the file using fgetc().This is done  until I detect that the 
+	//character is not an alphabet. I concatenate this character to the variable "word" forming a word in the
 	//file. Once the word is done (detect a space or any other character than an alphabet), I use the replace
 	//function and write that in the new file. The method below does this logic.
 	fileProcessing(word1,word2,fPointer,tempFile);
@@ -80,7 +79,7 @@ int main(int argc, char *argv[]){
 
 	//Remove the old file
 	remove(filename);
-	
+
 	//Rename the temp one to the old filename
 	rename("temp.txt", filename);
 }
