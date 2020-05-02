@@ -4,12 +4,11 @@ Therefore, my numbers are going to be based on that
 index     %time      self     children     called      name
 
 [1]        100         2         4                   main[1] 
-                       2	 0.4	     5/5        foo[2]
-		       2	 1           1/1        goo[3]
+                       2	 2	     5/5        foo[2]
+		      
 
-
-[2] 	    	       2	 0.4	     5/5	main[1]
-	    50	       2	 0.4         5	     foo[2]
+[2] 	    	       2	 2	     5/5	main[1]
+	    50	       2	 2           5	     foo[2]
 		       2	 1           1/1	goo[3]
 
 

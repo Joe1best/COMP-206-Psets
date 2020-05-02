@@ -5,7 +5,7 @@
 int main(int argc, char *argv[]){
 	if (argc != 2){
 		fprintf(stderr, "Error, this function only takes in one argument\n");
-		exit(1);
+		exit(2);
 	}
 	//Calculates the length of the string
 	int size = strlen(argv[1]);

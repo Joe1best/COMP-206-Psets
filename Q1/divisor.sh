@@ -5,7 +5,7 @@ div () {
 	#This assumes that the user correctly inputs TWO INTEGERS 
 	
 	#If both arguments passed are 0 
-	if [ $1 -eq 0 ] && [ $2 -eq 0 ] 
+	if [ $2 -eq 0 ] && [ $1 -eq 0 ] 
 	then 
 		echo "any number (Cannot have the largest divisor between two zeros)"
 		exit 1

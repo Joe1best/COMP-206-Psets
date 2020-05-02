@@ -27,7 +27,6 @@ fi
 
 while read line
 do 
-	echo "$line"
 	`./symword $line`
 	#saves the value of the exit code
 	c=`echo $?`
