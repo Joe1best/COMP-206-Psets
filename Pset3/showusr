@@ -1,0 +1,39 @@
+#Do not include a sh-bang (#!/bin/bash) in this script.
+#Do not write code outside of this function body
+function fname()
+{
+
+#Check to see if the number of arguments is 0. When there is 
+##no input for the function
+if [ $# -eq 0 ]
+then 
+	FNAME=ERROR
+	return 1
+fi
+
+#The login_name is the first positional argument inputed in the 
+##command prompt. 
+login_name=$1
+
+#Extracts the first name of the user. pinky -f hides $login_name
+#the header (-f) and shows the results that have the string $login_name
+#the awk command extracts the second argument from those filtered results 
+#to display the first name of the user. head -1 only display the first result 
+##in case multiple login sessions are existing for the same user.  
+fname=$(pinky -f $login_name | awk '{print $2}' | head -1)
+
+#Check to see if the command above returned something, if it did not, it means
+#that no userid is signed in. 
+if [ -z "$fname" ]
+then
+	FNAME=NOTFOUND
+	return 0
+fi
+
+#If the code reached this far, it means it has found the user, so we just
+##set FNAME to the found result, and return 0
+FNAME=$fname
+return 0
+
+}
+
