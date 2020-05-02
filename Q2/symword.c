@@ -10,6 +10,9 @@ int main(int argc, char *argv[]){
 	//Calculates the length of the string
 	int size = strlen(argv[1]);
 	
+	if (size==1){
+		exit(0);
+	}
 	//If the word is odd in length 
 	if (size%2==1){
 		int indexMid = size/2;
